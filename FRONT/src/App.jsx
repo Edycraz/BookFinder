@@ -21,7 +21,7 @@ function App() {
   const [filtroActual, setFiltroActual] = useState({ categoria: '', precio: 100000, ordenamiento: 'precio_desc' });
 
   useEffect(() => {
-    fetch('http://localhost:3000')
+    fetch('https://bookfinderback.onrender.com')
       .then((response) => response.json())
       .then((data) => {
         setLibrosFiltrados(data);
@@ -40,7 +40,7 @@ function App() {
     queryParams += `precio=${filtroActual.precio}&`;
     queryParams += `ordenamiento=${filtroActual.ordenamiento}`;
 
-    fetch(`http://localhost:3000/?${queryParams}`)
+    fetch(`https://bookfinderback.onrender.com/?${queryParams}`)
       .then(response => response.json())
       .then(data => setLibrosFiltrados(data))
       .catch(error => console.error('Error:', error));
@@ -62,7 +62,7 @@ function App() {
   };
 
   const onSearchSubmit = (searchTerm) => {
-    fetch(`http://localhost:3000/search?query=${encodeURIComponent(searchTerm)}`)
+    fetch(`https://bookfinderback.onrender.com/search?query=${encodeURIComponent(searchTerm)}`)
       .then(response => response.json())
       .then(data => setLibrosFiltrados(data))
       .catch(error => console.error('Error al buscar libros:', error));
