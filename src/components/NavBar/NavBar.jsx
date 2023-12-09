@@ -120,7 +120,7 @@ export default function Navbar() {
         return `${producto.titulo}${cantidad > 1 ? ` (${cantidad})` : ""}`;
       });
   
-      const response = await fetch("https://bookfinderback.onrender.com/create_preference", {
+      const response = await fetch("http://localhost:3000/create_preference", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -276,7 +276,6 @@ export default function Navbar() {
                 style={{ 
                   backgroundColor: '#009ee3', 
                   color: '#ffffff',
-                  display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   borderRadius: '5px',

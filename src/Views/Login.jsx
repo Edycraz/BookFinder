@@ -34,7 +34,7 @@ const [errorMessage, setErrorMessage] = useState({
       e.preventDefault()
 
       if(isSignedUp) { 
-        fetch('https://bookfinderback.onrender.com/login', {
+        fetch('http://localhost:3000/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ const [errorMessage, setErrorMessage] = useState({
     .catch((error) => console.log(error))
   }
     else {
-      fetch('https://bookfinderback.onrender.com/signup', {
+      fetch('http://localhost:3000/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
